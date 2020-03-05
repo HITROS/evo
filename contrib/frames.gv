@@ -1,0 +1,24 @@
+digraph G {
+"robot1/map" -> "robot1/odom"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 609.186 Hz\nMost recent transform: 55.731 ( 1582182050.747 sec old)\nBuffer length: 4.964 sec\n"];
+"robot1/link5" -> "robot1/gripper_link"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/link4" -> "robot1/link5"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/link5" -> "robot1/gripper_link_sub"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/link1" -> "robot1/link2"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/link2" -> "robot1/link3"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/link3" -> "robot1/link4"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 98.166 Hz\nMost recent transform: 55.724 ( 1582182050.754 sec old)\nBuffer length: 4.961 sec\n"];
+"robot1/odom" -> "robot1/base_footprint"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 30.205 Hz\nMost recent transform: 55.700 ( 1582182050.778 sec old)\nBuffer length: 4.933 sec\n"];
+"robot1/base_link" -> "robot1/wheel_left_link"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 24.077 Hz\nMost recent transform: 55.668 ( 1582182050.810 sec old)\nBuffer length: 4.901 sec\n"];
+"robot1/base_link" -> "robot1/wheel_right_link"[label="Broadcaster: /play_1582182054171149354\nAverage rate: 24.077 Hz\nMost recent transform: 55.668 ( 1582182050.810 sec old)\nBuffer length: 4.901 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1582182106.478"[ shape=plaintext ] ;
+ }->"robot1/map";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1582182106.478"[ shape=plaintext ] ;
+ }->"robot1/link1";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1582182106.478"[ shape=plaintext ] ;
+ }->"robot1/base_link";
+}
