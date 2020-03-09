@@ -1,5 +1,6 @@
 # 建图精度评估 by EVO
 
+
 EVO是一个开源的评估SLAM建图精度的软件包
 
 [官方网址](https://github.com/MichaelGrupp/evo/wiki/Formats)
@@ -7,7 +8,22 @@ EVO是一个开源的评估SLAM建图精度的软件包
 其用来建立对轨迹的评估,从而验证SLAM算法的精度
 
 通常用来评估slam建图中的轨迹误差.
-
+## 更新,关于加载rosmap的问题
+```
+evo_traj bag merge.bag --all_topics -p --plot_mode xy --ros_map_yaml test_room1_origin.yaml 
+```
+使用该命令打开地图后,会出现地图起点在左下角的问题,经过排查,是evo引用mathplot库的时候imshow函数中extend命令有问题
+参数：extent：(left, right, bottom, top）
+     数据坐标中左下角和右上角的位置。 如果为“无”，则定位图像使得像素中心落在基于零的（行，列）索引上。
+在evo/evo/tools/plot.py 中
+```
+extent = [0, n_cols * resolution, 0, n_rows * resolution]
+```
+修改为
+```
+extent = [n_cols*resolution*0.5*-1, n_cols * resolution*0.5,
+              n_rows*resolution*0.5*-1, n_rows * resolution*0.5]
+```
 ## 支持的数据类型整理
 
 evo支持多种数据包:KITTI,rosbag,Euroc,tum.
